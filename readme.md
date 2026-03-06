@@ -1,4 +1,3 @@
-```markdown
 # HINGE
 
 Official repository for:
@@ -20,6 +19,7 @@ More details, code, and pretrained checkpoints will be updated in this repositor
 @inproceedings{hinge2026,
   title={Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene Expression Generation from Histology Images},
   author={Donghai Fang and Yongheng Li and Zhen Wang and Yuansong Zeng and Wenwen Min},
-  booktitle={CVPR},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year={2026}
 }
+```
