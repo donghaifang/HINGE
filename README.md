@@ -293,8 +293,3 @@ If this code is useful, please cite HINGE and the upstream resources used by you
 }
 ```
 
-## License
-
-The project license is not selected yet. Add a `LICENSE` file before public release if you want others to reuse the code under explicit terms.
-
-Upstream data, models, and checkpoints have their own licenses and access terms.
