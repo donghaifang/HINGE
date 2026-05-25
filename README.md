@@ -8,20 +8,7 @@ HINGE learns to reconstruct masked spot-level gene expression from histology ima
 
 ## Method Overview
 
-```mermaid
-flowchart LR
-    A["H&E whole-slide image"] --> B["Spot-centered patches"]
-    B --> C["UNI image encoder"]
-    B --> D["CONCH image encoder"]
-    C --> E["Concatenated image condition"]
-    D --> E
-    F["Spot gene-expression vector"] --> G["Mask scheduler"]
-    G --> H["Masked expression x_t"]
-    E --> I["Conditional retention blocks"]
-    H --> I
-    J["Timestep + mask condition"] --> I
-    I --> K["Gene-expression reconstruction"]
-```
+
 
 HINGE uses a progressive mask chain over selected genes. At each training step, the model receives masked expression values, a timestep, a mask state, and image-derived conditioning features, then predicts the original gene-expression vector.
 
@@ -290,37 +277,10 @@ If this code is useful, please cite HINGE and the upstream resources used by you
 
 ```bibtex
 @inproceedings{hinge2026,
-  title     = {HINGE: Image-Conditioned Masked Gene Expression Reconstruction for Spatial Transcriptomics},
-  author    = {TODO},
-  booktitle = {TODO},
+  title     = {Adapting a Pre-trained Single-Cell Foundation Model to Spatial Gene  Expression Generation from Histology Images},
+  author    = {Fang, Donghai and Li, Yongheng and Wang, Zhen znd Zeng, Yuansong and Min, Wenwen},
+  booktitle = {IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year      = {2026}
-}
-```
-
-```bibtex
-@inproceedings{jaume2024hest,
-  title     = {HEST-1k: A Dataset for Spatial Transcriptomics and Histology Image Analysis},
-  author    = {Jaume, Guillaume and others},
-  booktitle = {Advances in Neural Information Processing Systems},
-  year      = {2024}
-}
-```
-
-```bibtex
-@article{lu2024conch,
-  title   = {A visual-language foundation model for computational pathology},
-  author  = {Lu, Ming Y. and Chen, Bowen and others},
-  journal = {Nature Medicine},
-  year    = {2024}
-}
-```
-
-```bibtex
-@article{chen2024uni,
-  title   = {Towards a general-purpose foundation model for computational pathology},
-  author  = {Chen, Richard J. and others},
-  journal = {Nature Medicine},
-  year    = {2024}
 }
 ```
 
