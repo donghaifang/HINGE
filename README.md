@@ -1,16 +1,16 @@
 # HINGE
 
-Official implementation placeholder for **HINGE**, an image-conditioned masked reconstruction model for spatial transcriptomics gene-expression prediction.
-![Overview of HINGE](Overview.jpg)
-HINGE learns to reconstruct masked spot-level gene expression from histology image embeddings. The current codebase includes the PyTorch model, CellFM/MindSpore weight-loading utilities, data assembly, masking scheduler, validation, checkpointing, and runnable command-line entry points.
+Official implementation of **HINGE (HIstology-coNditioned GEneration)**, a framework for histology-conditioned spatial gene expression generation by adapting a pre-trained single-cell foundation model.
 
-> Paper, pretrained checkpoints, processed features, and final benchmark numbers will be linked here after release.
+![Overview of HINGE](Overview.jpg)
+
+HINGE retrofits CellFM into a conditional expression generator. It keeps the expression-only backbone frozen, injects histology and timestep context through identity-initialized SoftAdaLN, and trains with an expression-space masked diffusion objective aligned with CellFM's masked autoencoding pre-training. The current codebase includes the PyTorch model, CellFM/MindSpore weight-loading utilities, data assembly, masking scheduler, validation, checkpointing, and runnable command-line entry points.
+
+> Paper: [arXiv:2603.19766](https://arxiv.org/abs/2603.19766). Pretrained checkpoints, processed features, and evaluation scripts will be linked after release.
 
 ## Method Overview
 
-
-
-HINGE uses a progressive mask chain over selected genes. At each training step, the model receives masked expression values, a timestep, a mask state, and image-derived conditioning features, then predicts the original gene-expression vector.
+HINGE uses a stochastic masked diffusion process over selected genes. At each step, the histology-conditioned CellFM predicts the clean gene-expression vector from partially observed expression, timestep information, and UNI/CONCH-derived image features; reverse sampling progressively reveals masked gene entries to generate spot-level expression. Training uses a warm-start curriculum that begins with low-mask timesteps before sampling the full timestep range.
 
 ## News
 
