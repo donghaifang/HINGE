@@ -1,7 +1,7 @@
 # HINGE
 
 Official implementation placeholder for **HINGE**, an image-conditioned masked reconstruction model for spatial transcriptomics gene-expression prediction.
-
+![Overview of HINGE](Overview.jpg)
 HINGE learns to reconstruct masked spot-level gene expression from histology image embeddings. The current codebase includes the PyTorch model, CellFM/MindSpore weight-loading utilities, data assembly, masking scheduler, validation, checkpointing, and runnable command-line entry points.
 
 > Paper, pretrained checkpoints, processed features, and final benchmark numbers will be linked here after release.
